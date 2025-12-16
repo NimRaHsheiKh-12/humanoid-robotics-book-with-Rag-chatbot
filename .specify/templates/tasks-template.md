@@ -25,6 +25,20 @@ description: "Task list template for feature implementation"
 - **Mobile**: `api/src/`, `ios/src/` or `android/src/`
 - Paths shown below assume single project - adjust based on plan.md structure
 
+## Constitution-Driven Tasks
+
+- **UI/UX Excellence**:
+  - [ ] Task: Ensure all UI components are implemented to be visually stunning, modern, and futuristic.
+  - [ ] Task: Test for a smooth, clean, and intuitive user experience.
+- **Innovative Design**:
+  - [ ] Task: Design and implement a unique landing page that feels like a product launch.
+- **Seamless Chatbot Integration**:
+  - [ ] Task: Implement the floating chatbot and verify that it does not cause content shifting.
+- **Internationalization**:
+  - [ ] Task: Set up the infrastructure for English and Urdu translations.
+- **Code Quality**:
+  - [ ] Task: Enforce linting and code style rules to maintain clean code.
+
 <!-- 
   ============================================================================
   IMPORTANT: The tasks below are SAMPLE TASKS for illustration purposes only.

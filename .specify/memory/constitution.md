@@ -1,55 +1,65 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+- Version change: 1.1.0 -> 2.0.0
+- List of modified principles: All principles have been replaced to reflect the new UI-focused constitution.
+- Added sections: None
+- Removed sections: None
+- Templates requiring updates: 
+  - .specify/templates/plan-template.md (pending)
+  - .specify/templates/spec-template.md (pending)
+  - .specify/templates/tasks-template.md (pending)
+- Follow-up TODOs: none
+-->
 
-## Core Principles
+# Humanoid Robotics Book Website UI Constitution
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+## Foundations
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### Purpose
+To guide the creation of a hackathon-level website UI for a humanoid robotics book, with a focus on creating a standout project that feels different, memorable, and professional.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### Scope
+The project includes the design and implementation of a visually stunning, modern, and futuristic website. The website will feature a landing page that feels like a product launch, content pages for the book, and a unique chatbot experience.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### Author Style
+Maintain a style that is eye-catching, premium, and unique, with a focus on creativity, visualization, and the "wow-factor".
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+## Principles
 
-### [PRINCIPLE_6_NAME]
+### UI/UX Excellence
+The user interface and experience must be the top priority. The UI must be visually stunning, modern, and futuristic. The UX must be smooth, clean, and intuitive, with no content shifting when interactive elements like the chatbot are used.
 
+### Innovative Design
+The website must not look like a normal documentation website. The design should be unique and memorable. The landing page, in particular, should have the feel of a product launch.
 
-[PRINCIPLE__DESCRIPTION]
+### Seamless Chatbot Integration
+The chatbot must behave like a real website chat widget, floating on the screen rather than being a side panel. The integration should be seamless and not disrupt the user experience.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+### Internationalization
+The website must be designed to support multiple languages, starting with English and Urdu, to ensure it is accessible to a wider audience.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### Code Quality
+The code must be clean, well-structured, and maintainable, even in a hackathon environment.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+### Amendments
+Any updates to the book structure or content require documentation and review.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+### Pull Requests & Reviews
+Verify compliance with the Constitution in all edits or additions.
+
+### Complexity Justification
+Any complex topic or section must be clearly explained and justified.
+
+## Runtime Guidance
+
+### Reference
+Always follow the principles outlined in this constitution.
+
+### Safety
+Ensure a safe and positive user experience.
+
+### Versioning
+Increment version numbers for major or minor changes. Document Last Amended date.
+
+**Version**: 2.0.0 | **Ratified**: 2025-12-06 | **Last Amended**: 2025-12-15

@@ -11,30 +11,6 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 
-# Show help if requested
-if ($Help) {
-    Write-Host "Usage: ./create-new-feature.ps1 [-Json] [-ShortName <name>] [-Number N] <feature description>"
-    Write-Host ""
-    Write-Host "Options:"
-    Write-Host "  -Json               Output in JSON format"
-    Write-Host "  -ShortName <name>   Provide a custom short name (2-4 words) for the branch"
-    Write-Host "  -Number N           Specify branch number manually (overrides auto-detection)"
-    Write-Host "  -Help               Show this help message"
-    Write-Host ""
-    Write-Host "Examples:"
-    Write-Host "  ./create-new-feature.ps1 'Add user authentication system' -ShortName 'user-auth'"
-    Write-Host "  ./create-new-feature.ps1 'Implement OAuth2 integration for API'"
-    exit 0
-}
-
-# Check if feature description provided
-if (-not $FeatureDescription -or $FeatureDescription.Count -eq 0) {
-    Write-Error "Usage: ./create-new-feature.ps1 [-Json] [-ShortName <name>] <feature description>"
-    exit 1
-}
-
-$featureDesc = ($FeatureDescription -join ' ').Trim()
-
 # Resolve repository root. Prefer git information when available, but fall back
 # to searching for repository markers so the workflow still functions in repositories that
 # were initialized with --no-git.
@@ -57,6 +33,56 @@ function Find-RepositoryRoot {
         }
         $current = $parent
     }
+}
+
+$fallbackRoot = (Find-RepositoryRoot -StartDir $PSScriptRoot)
+if (-not $fallbackRoot) {
+    Write-Error "Error: Could not determine repository root. Please run this script from within the repository."
+    exit 1
+}
+
+try {
+    $repoRoot = git rev-parse --show-toplevel 2>$null
+    if ($LASTEXITCODE -eq 0) {
+        $hasGit = $true
+    } else {
+        throw "Git not available"
+    }
+} catch {
+    $repoRoot = $fallbackRoot
+    $hasGit = $false
+}
+
+Set-Location $repoRoot
+
+# Show help if requested
+if ($Help) {
+    Write-Host "Usage: ./create-new-feature.ps1 [-Json] [-ShortName <name>] [-Number N] <feature description>"
+    Write-Host ""
+    Write-Host "Options:"
+    Write-Host "  -Json               Output in JSON format"
+    Write-Host "  -ShortName <name>   Provide a custom short name (2-4 words) for the branch"
+    Write-Host "  -Number N           Specify branch number manually (overrides auto-detection)"
+    Write-Host "  -Help               Show this help message"
+    Write-Host ""
+    Write-Host "Examples:"
+    Write-Host "  ./create-new-feature.ps1 'Add user authentication system' -ShortName 'user-auth'"
+    Write-Host "  ./create-new-feature.ps1 'Implement OAuth2 integration for API'"
+    exit 0
+}
+
+# Check if feature description provided, or read from temporary file
+if (-not $FeatureDescription -or $FeatureDescription.Count -eq 0) {
+    $tempFeatureFile = Join-Path $repoRoot ".gemini/tmp/feature_desc.txt"
+    if (Test-Path $tempFeatureFile) {
+        $featureDesc = (Get-Content $tempFeatureFile | Out-String).Trim()
+        Remove-Item $tempFeatureFile # Clean up the temporary file
+    } else {
+        Write-Error "Usage: ./create-new-feature.ps1 [-Json] [-ShortName <name>] <feature description> OR ensure .gemini/tmp/feature_desc.txt exists"
+        exit 1
+    }
+} else {
+    $featureDesc = ($FeatureDescription -join ' ').Trim()
 }
 
 function Get-NextBranchNumber {
