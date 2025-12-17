@@ -1,0 +1,193 @@
+.chatbotIcon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #FFDFD3; /* Light Pink */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft-2);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.chatbotIcon:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-soft-1);
+}
+
+.chatbotIcon img {
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(var(--glow-light));
+}
+
+.chatbotIcon.hidden {
+  display: none;
+}
+
+.chatWindow {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 350px;
+  height: 500px;
+  background-color: #E0BBE4; /* Lavender */
+  border-radius: 15px;
+  box-shadow: var(--shadow-soft-2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+  animation: fadeInRight 0.3s ease-out;
+}
+
+[data-theme='dark'] .chatWindow {
+  background-color: #3F3C6A; /* Dark Lavender */
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.chatHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #D1A3D1; /* Darker Lavender */
+  color: #4A235A; /* Dark Purple Text */
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  box-shadow: var(--shadow-soft-1);
+}
+
+.chatHeader h3 {
+  margin: 0;
+  color: #4A235A; /* Dark Purple Text */
+  text-shadow: none;
+}
+
+.chatHeader button {
+  background: none;
+  border: none;
+  color: #4A235A; /* Dark Purple Text */
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.chatHeader button:hover {
+  color: #8A2BE2; /* Brighter Purple */
+}
+
+.chatMessages {
+  flex-grow: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #E0BBE4; /* Lavender */
+  color: #4A235A; /* Dark Purple Text */
+}
+
+[data-theme='dark'] .chatMessages {
+  background-color: #3F3C6A; /* Dark Lavender */
+  color: #FFFFFF; /* White */
+}
+
+.chatMessages p {
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: 15px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.chatMessages p:nth-child(odd) {
+  align-self: flex-end;
+  background-color: #FFDFD3; /* Light Pink */
+  color: #4A235A; /* Dark Purple Text */
+  border-bottom-right-radius: 2px;
+}
+
+.chatMessages p:nth-child(even) {
+  align-self: flex-start;
+  background-color: #FFFFFF; /* White */
+  color: #4A235A; /* Dark Purple Text */
+  border-bottom-left-radius: 2px;
+}
+
+[data-theme='dark'] .chatMessages p:nth-child(odd) {
+  background-color: #FFC8B4; /* Darker Pink */
+  color: #4A235A; /* Dark Purple Text */
+}
+
+[data-theme='dark'] .chatMessages p:nth-child(even) {
+  background-color: #D1A3D1; /* Darker Lavender */
+  color: #FFFFFF; /* White */
+}
+
+.chatInput {
+  display: flex;
+  padding: 15px;
+  border-top: 1px solid #D1A3D1; /* Darker Lavender */
+  background-color: #E0BBE4; /* Lavender */
+}
+
+[data-theme='dark'] .chatInput {
+  background-color: #3F3C6A; /* Dark Lavender */
+  border-top: 1px solid #D1A3D1;
+}
+
+.chatInput input {
+  flex-grow: 1;
+  border: 1px solid #D1A3D1; /* Darker Lavender */
+  border-radius: 20px;
+  padding: 10px 15px;
+  margin-right: 10px;
+  font-size: 1rem;
+  background-color: #FFFFFF; /* White */
+  color: #4A235A; /* Dark Purple Text */
+  transition: all 0.3s ease;
+}
+
+[data-theme='dark'] .chatInput input {
+  background-color: #333;
+  color: #FFFFFF; /* White */
+  border-color: #D1A3D1; /* Darker Lavender */
+}
+
+.chatInput input:focus {
+  outline: none;
+  border-color: #8A2BE2; /* Brighter Purple */
+  box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.2);
+}
+
+.chatInput button {
+  background-color: #8A2BE2; /* Brighter Purple */
+  color: #FFFFFF; /* White */
+  border: none;
+  border-radius: 20px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-soft-1);
+}
+
+.chatInput button:hover {
+  background-color: #7B24C1; /* Darker Purple */
+  box-shadow: var(--shadow-soft-2);
+}

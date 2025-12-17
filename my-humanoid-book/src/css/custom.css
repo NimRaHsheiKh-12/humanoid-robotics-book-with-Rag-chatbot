@@ -1,0 +1,96 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+:root {
+  --ifm-color-primary: #8A2BE2; /* Brighter Purple for links */
+  --ifm-color-primary-dark: #7B24C1; /* Darker Purple for link hover */
+  --ifm-color-primary-darker: #7B24C1;
+  --ifm-color-primary-light: #FFDFD3; /* Light Pink */
+  --ifm-color-primary-lighter: #FFC8B4; /* Darker Pink */
+  --ifm-color-primary-lightest: #FFFFFF; /* White */
+
+  --ifm-background-color: #FFFFFF;
+  --ifm-font-color-base: #4A235A; /* Dark Purple Text */
+  --ifm-heading-color: #3B1A49; /* Darker Purple for Headings */
+
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* Custom theme variables */
+  --theme-gradient: linear-gradient(to right, #FFDFD3, #E0BBE4);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #E0BBE4; /* Lavender for links */
+  --ifm-color-primary-dark:#D1A3D1; /* Darker Lavender for link hover */
+  --ifm-color-primary-darker: #D1A3D1;
+  --ifm-color-primary-light:#FFDFD3; /* Light Pink */
+  --ifm-color-primary-lighter:#FFC8B4; /* Darker Pink */
+  --ifm-color-primary-lightest:#FFC8B4;
+  
+  --ifm-background-color: #3F3C6A; /* Dark Lavender Background */
+  --ifm-font-color-base: #FFFFFF; /* White */
+  --ifm-heading-color: #FFFFFF; /* White for Headings in dark mode */
+
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  
+  --theme-gradient: linear-gradient(to right, #D1A3D1, #FFC8B4);
+}
+
+body {
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+}
+
+.hero {
+  background: var(--theme-gradient);
+}
+
+.footer {
+  background: var(--theme-gradient);
+  color: var(--ifm-font-color-base); /* Ensure footer text is readable */
+}
+
+.footer a {
+  color: var(--ifm-font-color-base);
+  text-decoration: underline;
+}
+
+.footer a:hover {
+    color: var(--ifm-color-primary-dark);
+}
+
+.navbar {
+  background: var(--theme-gradient);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.button--primary {
+  background-color: var(--ifm-color-primary);
+  color: #FFFFFF; /* White text on buttons for contrast */
+  border: none;
+}
+
+.button--primary:hover {
+  background-color: var(--ifm-color-primary-dark);
+}
+
+a {
+  color: var(--ifm-color-primary);
+}
+
+a:hover {
+  color: var(--ifm-color-primary-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ifm-heading-color);
+}
+
+.card {
+  background-color: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-primary-light);
+}
