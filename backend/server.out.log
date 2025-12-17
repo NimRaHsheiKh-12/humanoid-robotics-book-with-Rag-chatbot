@@ -1,0 +1,9 @@
+Loaded 17 markdown documents from C:\Hack\hackathon\my-humanoid-book\docs
+============================================================
+Starting Humanoid Robotics RAG Backend
+============================================================
+Docs directory: C:\Hack\hackathon\my-humanoid-book\docs
+Documents loaded: 17
+Server will start at: http://127.0.0.1:8000
+API docs available at: http://127.0.0.1:8000/docs
+============================================================
