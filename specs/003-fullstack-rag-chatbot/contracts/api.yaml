@@ -1,0 +1,29 @@
+openapi: 3.0.0
+info:
+  title: Full-Stack RAG Chatbot API
+  version: 1.0.0
+paths:
+  /chat:
+    post:
+      summary: Send a message to the chatbot
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+                  example: "What is a humanoid robot?"
+      responses:
+        '200':
+          description: The chatbot's response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: string
+                    example: "A humanoid robot is a robot with its body shape built to resemble the human body."

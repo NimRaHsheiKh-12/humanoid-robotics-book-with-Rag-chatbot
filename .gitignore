@@ -19,10 +19,18 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Python
+# Universal ignore patterns from remote (added manually)
+Thumbs.db
+*.tmp
+*.swp
+.vscode/
+.idea/
+
+# Python specific from remote (added manually)
 __pycache__/
 *.pyc
 .venv/
 venv/
 *.egg-info/
 .env
+dist/
