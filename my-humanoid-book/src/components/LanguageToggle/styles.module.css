@@ -1,0 +1,52 @@
+.languageToggleContainer {
+  position: fixed;
+  bottom: 120px; /* Above the chatbot icon */
+  right: 20px;
+  background-color: var(--color-background-light);
+  border-radius: 8px;
+  padding: 5px 10px;
+  box-shadow: var(--shadow-soft-1);
+  z-index: 999; /* Slightly lower than chatbot */
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 5px;
+}
+
+[data-theme='dark'] .languageToggleContainer {
+  background-color: var(--color-background-dark);
+  box-shadow: var(--shadow-soft-2);
+}
+
+.languageToggleButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--color-text-dark);
+  transition: all 0.2s ease-in-out;
+  font-weight: 500;
+}
+
+[data-theme='dark'] .languageToggleButton {
+  color: var(--color-text-light);
+}
+
+.languageToggleButton:hover {
+  background-color: var(--ifm-hover-background-color);
+  color: var(--color-brand-primary);
+  text-shadow: var(--glow-light);
+}
+
+.languageToggleButton.active {
+  background-color: var(--color-brand-secondary);
+  color: var(--color-background-dark);
+  font-weight: bold;
+  box-shadow: var(--shadow-soft-1);
+}
+
+[data-theme='dark'] .languageToggleButton.active {
+  background-color: var(--color-brand-primary);
+  color: var(--color-text-light);
+  box-shadow: var(--shadow-soft-2);
+}

@@ -1,0 +1,101 @@
+.floating-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #FFDFD3; /* Light Pink */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(255, 223, 211, 0.4); /* Lighter shadow for pink */
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.floating-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.floating-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(255, 223, 211, 0.6);
+}
+
+.chat-window {
+  position: fixed;
+  bottom: 90px; /* Above the floating icon */
+  right: 20px;
+  width: 350px;
+  height: 500px;
+  background: #E0BBE4; /* Lavender */
+  color: #4A235A; /* Dark Purple Text */
+  border-radius: 15px; /* More rounded */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+  pointer-events: none;
+  border: 1px solid #D1A3D1; /* Darker Lavender border */
+}
+
+.chat-window.chat-window-open {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: all;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.chat-header-title {
+  flex: 1;
+  color: #4A235A; /* Dark Purple Text */
+  font-weight: 600;
+  font-size: 14px;
+}
+.chat-header span {
+  font-size: 12px;
+}
+
+.close-button {
+  align-self: flex-end;
+  margin: 10px;
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: #4A235A; /* Dark Purple Text */
+  transition: color 0.2s ease-in-out;
+}
+
+.close-button:hover {
+  color: #8A2BE2; /* Brighter Purple */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .floating-icon {
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .chat-window {
+    bottom: 70px;
+    right: 10px;
+    width: calc(100% - 20px); /* Full width with some padding */
+    height: calc(100% - 80px); /* Full height with some space */
+    border-radius: 10px;
+  }
+}
